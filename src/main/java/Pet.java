@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 //Stap 1: maak de juiste klassen aan:
 public class Pet {
     //Stap 2: Attributen voor de 'Pet' klasse:
