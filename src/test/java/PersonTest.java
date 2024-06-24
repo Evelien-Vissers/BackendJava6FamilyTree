@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonTest {
@@ -84,6 +82,17 @@ assertEquals("Jan", result);
     //Arrange
     Person grootvader = new Person ("Piet", "Janssen", 89, "Male");
     Person vader = new Person("Henk", "Janssen", 56, "Male");
+    Person kind1 = new Person ("Sophie", "Janssen", 89, "Female");
+    Person kind2 = new Person ("Willem", "Janssen", 5, "Male");
+    grootvader.addChild(vader);
+    vader.addChild(kind1);
+    vader.addChild(kind2);
+    //Act
+    List<Person> kleinkinderen = grootvader.getGrandChildren();
+    //Assert
+    assertEquals(2, kleinkinderen.size());
+    assertTrue(kleinkinderen.contains(kind1));
+    assertTrue(kleinkinderen.contains(kind2));
 
 }
 }
