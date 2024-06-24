@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 //Stap 1: Maak de juiste klassen aan:
 public class Person {
@@ -25,8 +26,8 @@ public class Person {
         this.middlename = middleName;
         this.lastName = lastName;
         this.age = age;
-        this.siblings = new List<Person>();
-        this.children = new List<Person>();
+        this.siblings = new ArrayList<>();
+        this.children = new ArrayList<>();
     }
     //Stap 4: Maak alle getters & setters aan. Deze bieden een gecontroleerde manier (een methode) om toegang te krijgen tot de attributen van een klasse.
     //Dit is een principe van 'encapsulation', wat zorgt voor bescherming van interne representatie van een object tegen directe toegang van buitenaf.
@@ -98,7 +99,7 @@ public class Person {
         this.father = father;
     }
     //Methode om 'child' toe te voegen:
-    public void addChiled(Person child) {
+    public void addChild(Person child) {
         this.children.add(child);
     }
     //Methode om 'pet' toe te voegen:
@@ -110,7 +111,7 @@ public class Person {
     public List<Person> getGrandChildren() {
         List<Person> grandChildren = new ArrayList<Person>();
         for (Person child : children) {
-            grandchildren.addAll(child.getChildren());
+            grandChildren.addAll(child.getChildren());
         }
         return grandChildren;
     }
